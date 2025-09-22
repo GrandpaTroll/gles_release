@@ -43,6 +43,62 @@ When running your scripts make sure to create a local `local gles(or whatever yo
 | :-------- | :------- | :------------------------- |
 | **return** | `none` | Request a full update from the server (fixes visual bugs) |
 
+#### gles.GetServerTick()
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| **return** | `int` | Returns the tickcount from the server |
+
+#### gles.GetClientTick()
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| **return** | `int` | Returns the tickcount predicted from the client |
+
+#### gles.GetChokedPackets()
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| **return** | `int` | Returns the current amount of choked packets |
+
+#### gles.GetOutSeqNum()
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| **return** | `int` | Returns the current out sequence number |
+
+#### gles.SetOutSeqNum(`seq_num`)
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `seq_num` | `int` | the integer number to set the out sequence number to |
+| **return** | `none` | |
+
+#### gles.LoadFile(`luastate_realm`, `filename`, `spoofed_name = filename`)
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `luastate_realm` | `int` | the luastate realm type [**LUASTATE_**](#link_luastate_type) |
+| `filename` | `string` | the lua file you want to load from gles/luas/... |
+| `spoofed_name` | `string` | if set: will use the spoofed_name instead of the real file name for debug information |
+| **return** | `none` | |
+
+#### gles.SetCmdNum(`ucmd`, `number`)
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `ucmd` | `CUserCmd` | the userCmd object |
+| `number` | `int` | the integer number you want to set your command number to. |
+| **return** | `none` | |
+
+#### gles.SetTickCount(`ucmd`, `number`)
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `ucmd` | `CUserCmd` | the userCmd object |
+| `number` | `int` | the integer number you want to set your tickcount to. |
+| **return** | `none` | |
+
  more to come...
 ## Global Variables
 
@@ -58,3 +114,11 @@ FLOW_OUTGOING = 0
 FLOW_INCOMING = 1
 ```
 
+<a name="link_luastate_type"> </a>
+#### LUASTATE_ types
+
+```
+LUASTATE_CLIENT = 0
+LUASTATE_SERVER = 1
+LUASTATE_MENU = 2
+```
