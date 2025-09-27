@@ -154,7 +154,7 @@ If you return a variable inside the hooks, it will not be called in the other re
 the priority follows client->server->menu.
 
 | Hook Name | Description     | arguements                | returns |
-| :-------- | :------- | :------------------------- |  |
+| :-------- | :------- | :------------------------- |  :------------------------- |
 | "OnClientLuaLoaded" | Called when the client realm is loaded before addon autorun | `none` | `none` |
 | "RunOnClient" | Called when the client lua is about to be loaded | `filename`, `code` | `steal_file`, `dont_run` |
 
