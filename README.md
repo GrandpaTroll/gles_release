@@ -118,6 +118,25 @@ When running your scripts make sure to create a local `local gles(or whatever yo
 | `datatable_type` | `int` | the datatable type  [**DTVar_**](#link_dtvar_type) |
 | **return** | `any` | returns value by the type `datatable_type` given |
 
+
+#### gles.GetConVar(`convar_name`)
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `convar_name` | `string` | the convar you want to find |
+| **return** | `ConVar` | returns a convar; nil if not found. |
+
+#### gles.SetConVar(`convar_name`, `convar_value`)
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `convar_name` | `string` | the convar you want to change the value |
+| `convar_name` | `string`, `float`, `int`, `bool` | the value for the convar |
+| **return** | `none` |  |
+
+
+## Cheat hooks
+
 #### gles.AddCallback(`lua_state_realm`, `hook_name`, `lua_func`)
 
 | Parameter | Type     | Description                |
@@ -142,6 +161,9 @@ When running your scripts make sure to create a local `local gles(or whatever yo
 | `lua_state_realm` | `int` | the luastate realm type [**LUASTATE_**](#link_luastate_type) |
 | **return** | `none` | Removes all the hooks connected to that [**lua realm**](#link_luastate_type) |
 
+
+
+
  more to come...
 
 ## Hooks
@@ -157,6 +179,7 @@ the priority follows client->server->menu.
 | :-------- | :------- | :------------------------- |  :------------------------- |
 | "OnClientLuaLoaded" | Called when the client realm is loaded before addon autorun | `none` | `none` |
 | "RunOnClient" | Called when the client lua is about to be loaded | `filename`, `code` | `steal_file`, `dont_run` |
+| "OnDisconnect" | Called when the disconnecting from the server | `disconnet_reason` | `new_reason` |
 
 ## Global Variables
 
