@@ -118,6 +118,17 @@ When running your scripts make sure to create a local `local gles(or whatever yo
 | `datatable_type` | `int` | the datatable type  [**DTVar_**](#link_dtvar_type) |
 | **return** | `any` | returns value by the type `datatable_type` given |
 
+#### gles.SetNetVar(`entity`, `datatable_name`, `datatable_variable`, `datatable_type`, `value`)
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `entity` | `Entity` | The entity you want to grab the netvar info from |
+| `datatable_name` | `string` | the datatable name `i.e. DT_BasePlayer` |
+| `datatable_variable` | `string` | the datatable variable from the `datatable_name` `i.e DT_BasePlayer->m_flSimulationTime` |
+| `datatable_type` | `int` | the datatable type  [**DTVar_**](#link_dtvar_type) |
+| `value` | `any` | the value to set the netvar (must match the type)  [**DTVar_**](#link_dtvar_type) |
+| **return** | `none` |  |
+
 
 #### gles.GetConVar(`convar_name`)
 
@@ -179,7 +190,8 @@ the priority follows client->server->menu.
 | :-------- | :------- | :------------------------- |  :------------------------- |
 | "OnClientLuaLoaded" | Called when the client realm is loaded before addon autorun | `none` | `none` |
 | "RunOnClient" | Called when the client lua is about to be loaded | `filename`, `code` | `steal_file`, `dont_run` |
-| "OnDisconnect" | Called when the disconnecting from the server | `disconnet_reason` | `new_reason` |
+| "OnDisconnect" | Called when the disconnecting from the server | `disconnect_reason` | `new_reason` |
+| "DrawVisuals" | Called when the render is ready for visual drawing | `none` | `none` |
 
 ## Global Variables
 
