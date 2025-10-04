@@ -1,4 +1,3 @@
-
 # Gmod Lua Executor Support
 
 A injectable DLL that imports engine functionality to the lua realms.
