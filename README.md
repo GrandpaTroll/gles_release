@@ -4,7 +4,6 @@ A injectable DLL that imports engine functionality to the lua realms.
 
 When running your scripts make sure to create a local `local gles(or whatever you want) = _G._gles` to keep the functions while preventing anticheats from picking it up.
 
-
 ## API Reference
 
 #### gles.GetLatency(`flow_type`)
@@ -171,9 +170,6 @@ When running your scripts make sure to create a local `local gles(or whatever yo
 | `lua_state_realm` | `int` | the luastate realm type [**LUASTATE_**](#link_luastate_type) |
 | **return** | `none` | Removes all the hooks connected to that [**lua realm**](#link_luastate_type) |
 
-
-
-
  more to come...
 
 ## Hooks
@@ -195,6 +191,8 @@ the priority follows client->server->menu.
 | "OnEntityRemoved" | Called when an entity is about to be removed | `entity` | `none` |
 | "PreCreateMove" | Called before CreateMove hook | `usercmd` | `bool silent_aim` |
 | "PostCreateMove" | Called after CraeteMove hook | `usercmd` | `bool silent_aim` |
+| "PreFrameStageNotify" | Called before FrameStageNotify hook | [`framestage_id`](#link_framestage_type) | `none` |
+| "PostFrameStageNotify" | Called after FrameStageNotify hook | [`framestage_id`](#link_framestage_type) | `none` |
 
 ## Global Variables
 
@@ -232,4 +230,18 @@ DTVar_String = 4
 DTVar_Array = 5
 DTVar_DataTable = 6
 DTVar_Int64 = 7
+```
+
+<a name="link_framestage_type"> </a>
+#### FRAMESTAGE_ types
+
+```
+FRAMESTAGE_UNDEFINED = -1,
+FRAMESTAGE_START = 0
+FRAMESTAGE_NET_UPDATE_START = 1
+FRAMESTAGE_NET_UPDATE_POSTDATAUPDATE_START = 2
+FRAMESTAGE_NET_UPDATE_POSTDATAUPDATE_END = 3
+FRAMESTAGE_NET_UPDATE_END = 4
+FRAMESTAGE_RENDER_START = 5
+FRAMESTAGE_RENDER_END = 6
 ```
