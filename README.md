@@ -1,3 +1,4 @@
+
 # Gmod Lua Executor Support
 
 A injectable DLL that imports engine functionality to the lua realms.
@@ -191,6 +192,8 @@ the priority follows client->server->menu.
 | "RunOnClient" | Called when the client lua is about to be loaded | `filename`, `code` | `steal_file`, `dont_run` |
 | "OnDisconnect" | Called when the disconnecting from the server | `disconnect_reason` | `new_reason` |
 | "DrawVisuals" | Called when the render is ready for visual drawing | `none` | `none` |
+| "OnEntityCreated" | Called when an entity is created. | `entity` | `none` |
+| "OnEntityRemoved" | Called when an entity is about to be removed | `entity` | `none` |
 
 ## Global Variables
 
@@ -229,5 +232,3 @@ DTVar_Array = 5
 DTVar_DataTable = 6
 DTVar_Int64 = 7
 ```
-
-
