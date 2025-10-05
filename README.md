@@ -1,4 +1,3 @@
-
 # Gmod Lua Executor Support
 
 A injectable DLL that imports engine functionality to the lua realms.
@@ -189,11 +188,13 @@ the priority follows client->server->menu.
 | Hook Name | Description     | arguements                | returns |
 | :-------- | :------- | :------------------------- |  :------------------------- |
 | "OnClientLuaLoaded" | Called when the client realm is loaded before addon autorun | `none` | `none` |
-| "RunOnClient" | Called when the client lua is about to be loaded | `filename`, `code` | `steal_file`, `dont_run` |
-| "OnDisconnect" | Called when the disconnecting from the server | `disconnect_reason` | `new_reason` |
+| "RunOnClient" | Called when the client lua is about to be loaded | `filename`, `code` | `bool steal_file`, `bool dont_run` |
+| "OnDisconnect" | Called when the disconnecting from the server | `disconnect_reason` | `str new_reason` |
 | "DrawVisuals" | Called when the render is ready for visual drawing | `none` | `none` |
 | "OnEntityCreated" | Called when an entity is created. | `entity` | `none` |
 | "OnEntityRemoved" | Called when an entity is about to be removed | `entity` | `none` |
+| "PreCreateMove" | Called before CreateMove hook | `usercmd` | `bool silent_aim` |
+| "PostCreateMove" | Called after CraeteMove hook | `usercmd` | `bool silent_aim` |
 
 ## Global Variables
 
