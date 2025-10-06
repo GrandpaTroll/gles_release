@@ -143,6 +143,13 @@ When running your scripts make sure to create a local `local gles(or whatever yo
 | `convar_name` | `string`, `float`, `int`, `bool` | the value for the convar |
 | **return** | `none` |  |
 
+#### gles.ScreenTransform(`vector_pos`)
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `vector_pos` | `Vector` | The 3d position to be converted into 2d screen pos. |
+| **return** | `vec screen_pos` | A vector where x and y are screen coordinates. |
+
 
 ## Cheat hooks
 
