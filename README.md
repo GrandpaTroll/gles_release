@@ -200,6 +200,8 @@ the priority follows client->server->menu.
 | "PostCreateMove" | Called after CraeteMove hook | `usercmd` | `bool silent_aim` |
 | "PreFrameStageNotify" | Called before FrameStageNotify hook | [`framestage_id`](#link_framestage_type) | `none` |
 | "PostFrameStageNotify" | Called after FrameStageNotify hook | [`framestage_id`](#link_framestage_type) | `none` |
+| "PreRunCommand" | Called before RunCommand hook | `none` | `none` |
+| "PostRunCommand" | Called before RunCommand hook | `none` | `none` |
 
 ## Global Variables
 
