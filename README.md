@@ -202,6 +202,7 @@ the priority follows client->server->menu.
 | "PostFrameStageNotify" | Called after FrameStageNotify hook | [`framestage_id`](#link_framestage_type) | `none` |
 | "PreRunCommand" | Called before RunCommand hook | `none` | `none` |
 | "PostRunCommand" | Called before RunCommand hook | `none` | `none` |
+| "OverrideView" | Called before Override hook to make change to your view | `tbl_view {origin, angles, fov}` | `tbl_view {origin, angles, fov}` |
 
 ## Global Variables
 
