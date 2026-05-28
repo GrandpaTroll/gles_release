@@ -150,6 +150,12 @@ When running your scripts make sure to create a local `local gles(or whatever yo
 | `vector_pos` | `Vector` | The 3d position to be converted into 2d screen pos. |
 | **return** | `vec screen_pos`, `bool in_view` | A vector where x and y are screen coordinates and a bool if in view |
 
+#### gles.SetContextAim(`aim_dir`)
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `aim_dir` | `Vector` | the direction to set the context aim |
+| **return** | `none` | Sets the context aim direction |
 
 ## Cheat hooks
 
@@ -177,6 +183,7 @@ When running your scripts make sure to create a local `local gles(or whatever yo
 | `lua_state_realm` | `int` | the luastate realm type [**LUASTATE_**](#link_luastate_type) |
 | **return** | `none` | Removes all the hooks connected to that [**lua realm**](#link_luastate_type) |
 
+
  more to come...
 
 ## Hooks
@@ -200,9 +207,8 @@ the priority follows client->server->menu.
 | "PostCreateMove" | Called after CraeteMove hook | `usercmd` | `bool silent_aim` |
 | "PreFrameStageNotify" | Called before FrameStageNotify hook | [`framestage_id`](#link_framestage_type) | `none` |
 | "PostFrameStageNotify" | Called after FrameStageNotify hook | [`framestage_id`](#link_framestage_type) | `none` |
-| "PreRunCommand" | Called before RunCommand hook | `none` | `none` |
-| "PostRunCommand" | Called before RunCommand hook | `none` | `none` |
-| "OverrideView" | Called before Override hook to make change to your view | `tbl_view {origin, angles, fov}` | `tbl_view {origin, angles, fov}` |
+| "OverrideView" | Edit your view settings | `view_settings {origin, angles, fov}` | `tbl view_settings` |
+| "EntityFireBullets" | when a bullet is fired from an entity. | `bullet_data {attacker, src, dir, spread}` | `tbl bullet_data` |
 
 ## Global Variables
 
