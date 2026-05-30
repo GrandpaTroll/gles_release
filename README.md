@@ -150,10 +150,11 @@ When running your scripts make sure to create a local `local gles(or whatever yo
 | `vector_pos` | `Vector` | The 3d position to be converted into 2d screen pos. |
 | **return** | `vec screen_pos`, `bool in_view` | A vector where x and y are screen coordinates and a bool if in view |
 
-#### gles.SetContextAim(`aim_dir`)
+#### gles.SetContextAim(`ucmd`, `aim_dir`)
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
+| `ucmd` | `CUserCmd` | the userCmd object |
 | `aim_dir` | `Vector` | the direction to set the context aim |
 | **return** | `none` | Sets the context aim direction |
 
