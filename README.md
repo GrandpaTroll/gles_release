@@ -158,6 +158,13 @@ When running your scripts make sure to create a local `local gles(or whatever yo
 | `aim_dir` | `Vector` | the direction to set the context aim |
 | **return** | `none` | Sets the context aim direction |
 
+#### gles.UpdatePrediction()
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| **return** | `none` | Call to update engine variables. |
+
+
 ## Cheat hooks
 
 #### gles.AddCallback(`lua_state_realm`, `hook_name`, `lua_func`)
@@ -242,7 +249,7 @@ LUASTATE_MENU = 2
 DTVar_Int = 0
 DTVar_Float = 1
 DTVar_Vector = 2
-DTVar_VectorXY = 3
+DTVar_Double = 3
 DTVar_String = 4
 DTVar_Array = 5
 DTVar_DataTable = 6
